@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SimpleFormComponent } from './simple-form.component';
+import { AppModule } from '../../app.module';
+import { APP_BASE_HREF } from '@angular/common';
 
 describe('SimpleFormComponent', () => {
   let component: SimpleFormComponent;
@@ -8,7 +10,9 @@ describe('SimpleFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SimpleFormComponent ]
+      declarations: [ ],
+      imports: [AppModule],
+      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
     })
     .compileComponents();
   }));
@@ -22,4 +26,5 @@ describe('SimpleFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
