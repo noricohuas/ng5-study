@@ -1,0 +1,15 @@
+<div>
+    <div><a href="https://www.w3cschool.cn/angular/angular-12c825ux.html" target="_blank">基础教程</a></div>
+    <div>输入：{{message}}</div>
+    <input #myInput type="text" [(ngModel)]="message">
+    <button (click)="onClick($event, myInput.value)">点击</button>
+    <button (click)="onUpdate(0,message)">更新</button>
+    <p>结果：</p>
+    <div><input #taResult type="text"/></div>
+    <div>apiurl:{{apiUrl}}</div>
+    <ul>
+      <li *ngFor="let message of mailService.messages; index as i;">
+        {{i}} - {{message.text}}
+      </li>
+    </ul>
+</div>
